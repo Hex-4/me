@@ -2,10 +2,45 @@
 
 ---
 
-<div class="my-32 mx-auto outline outline-1 outline-surface2 w-1/2 p-16 shadow-2xl rounded-md" data-tilt data-tilt-max="10" data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.1">
+<div class="my-32 mx-auto outline outline-1 outline-surface2 w-1/2 p-16 shadow-2xl rounded-md flex flex-row gap-10" data-tilt data-tilt-max="10" data-tilt-scale="1.1" data-tilt-glare data-tilt-max-glare="0.1" id="card">
     <img src="avatar.png" alt="hex4 avatar" class="size-64 rounded-full">
+    <div>
+        <h1 class="text-5xl text-text font-bold" data-value="Hex4">Hex⁴</h1>
+    </div>
 
 </div>
 <script>
     import VanillaTilt from 'vanilla-tilt';
+
+    // Modified code from Hyperplexed. https://codepen.io/Hyperplexed/full/rNrJgrd
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+
+    let interval = null;
+
+    document.getElementById("card")
+    .onmouseover = event => {  
+    let iteration = 0;
+    let text = document.querySelector("h1")
+    
+    clearInterval(interval);
+    
+    interval = setInterval(() => {
+        text.innerText = text.innerText
+        .split("")
+        .map((letter, index) => {
+            if(index < iteration) {
+            return text.dataset.value[index];
+            }
+        
+            return letters[Math.floor(Math.random() * 62)]
+        })
+        .join("");
+        
+        if(iteration >= text.dataset.value.length){ 
+        clearInterval(interval);
+        }
+        
+        iteration += 1 / 6;
+    }, 30);
+    }
 </script>
