@@ -1,0 +1,41 @@
+---
+import Item from "../Item.astro"
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+		<title>I'm hex4.</title>
+	</head>
+	<body class="mocha bg-crust w-screen min-h-screen">
+		
+		<div class="w-1/2 h-full py-24 mx-auto ">
+			
+			<h1 class="text-xl text-subtext0">CHAPTER THREE</h1>
+			<h1 class="text-5xl text-text font-bold">$ ls ~/projects</h1>
+
+            <p class="text-text font-sans text-lg whitespace-pre-line">
+                Here are a few of the things I've made.
+            </p>
+            <Item title="Personal website" link="https://hex4.pages.dev" source="Hex-4/me">
+                Where you are right now! Made using Astro (my new favourite framework) and Tailwind plus Catppuccin.
+            </Item>
+            <Item title="The Archives" link="https://example.com" source="Hex-4/hidden-gems">
+                Remember when I was talking about finding things buried under hundreds of search results? I've gathered them all here. Astro + Tailwind + Catppuccin.
+                
+            </Item>
+            <Item title="Galaxium//ONE" link="https://the-dimaverse.itch.io/galaxium-one">
+                PICO-8 shmup game based on the Lazy Devs tutorial. Possibly the favourite thing I've made.
+            </Item>
+			<br>
+			<a href="/02" class="inline-block text-surface0 hover:text-surface2 transition hover:-translate-x-1 text-xl hover:text-bold whitespace-pre">&lt;- </a>
+        </div>
+
+    </body>
+</html>

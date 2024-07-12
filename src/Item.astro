@@ -1,0 +1,19 @@
+---
+const { title = "Project", link = "https://example.com", source, creatorLink } = Astro.props;
+---
+<div class="w-full outline outline-1 outline-surface2 rounded-md p-6 my-6">
+    <p class="text-2xl text-text group transition-all hover:text-peach duration-300 mb-2">
+        <b></b>
+        <a href={link} class="underline underline-offset-8 transition-all hover:underline-offset-[12px]">
+            <b>{title}</b>
+        </a>
+        
+        
+    </p>
+    <p class="text-text font-sans text-lg">
+        <slot />
+        <br>
+        {source && <a class="transition-all underline underline-offset-4 hover:underline-offset-8 hover:text-text" href={"https://github.com/"+source}>Source code.</a>}
+    </p>
+    
+</div>
